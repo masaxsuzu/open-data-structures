@@ -16,7 +16,7 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         [Fact]
         public void TestAnswer01()
         {
-            TestQuestion06._TestAnswer01(new CheatList());
+            Common.TestInterface.TestVector(new MyList<int>());
         }
 
         [Theory]

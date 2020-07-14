@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 
 namespace Netsoft.OpenDataStructures.Chapter01
@@ -21,14 +22,18 @@ namespace Netsoft.OpenDataStructures.Chapter01
             return _list[i];
         }
 
-        public void Remove(int i)
+        public int Remove(int i)
         {
+            int t = _list[i];
             _list.RemoveAt(i);
+            return t;
         }
 
-        public void Set(int i, int v)
+        public int Set(int i, int v)
         {
+            int t = _list[i];
             _list[i] = v;
+            return t;
         }
 
         public int Size()

@@ -8,10 +8,10 @@ namespace Netsoft.OpenDataStructures.Interfaces
 
         T Get(int i);
 
-        void Set(int i, T v);
+        T Set(int i, T v);
 
         void Add(int i, T v);
 
-        void Remove(int i);
+        T Remove(int i);
     }
 }

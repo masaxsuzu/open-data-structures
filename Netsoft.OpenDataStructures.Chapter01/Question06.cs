@@ -27,9 +27,11 @@ namespace Netsoft.OpenDataStructures.Chapter01
             return _collection[i];
         }
 
-        public void Set(int i, T v)
+        public T Set(int i, T v)
         {
+            var t = _collection[i];
             _collection[i] = v;
+            return t;
         }
 
         public void Add(int i, T v)
@@ -45,15 +47,16 @@ namespace Netsoft.OpenDataStructures.Chapter01
             _collection[i] = v;
         }
 
-        public void Remove(int i)
+        public T Remove(int i)
         {
-
+            var t = _collection[i];
             for (int index = i; index < Size() - 1; index++)
             {
                 _collection[index] = _collection[index + 1];
             }
 
             Array.Resize(ref _collection, Size() - 1);
+            return t;
         }
     }
     public class MySSet<T> : Interfaces.IUSet<T> where T : IEquatable<T>
