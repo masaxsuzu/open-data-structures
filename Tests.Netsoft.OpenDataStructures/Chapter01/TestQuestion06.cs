@@ -19,7 +19,7 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         {
             _TestAnswer01(new MyList());
         }
-        private void _TestAnswer01(IMyList<int> list)
+        internal static void _TestAnswer01(IMyList<int> list)
         {
 
             Assert.Equal(0, list.Size());
@@ -59,7 +59,7 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         {
             _TestAnswer02(new MySSet());
         }
-        private void _TestAnswer02(IMySSet<int> list)
+        private static void _TestAnswer02(IMySSet<int> list)
         {
             Assert.Equal(0, list.Size());
 
@@ -91,7 +91,7 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         {
             _TestAnswer03(new MyUSet());
         }
-        private void _TestAnswer03(IMyUSet<int> list)
+        private static void _TestAnswer03(IMyUSet<int> list)
         {
             Assert.Equal(0, list.Size());
 
