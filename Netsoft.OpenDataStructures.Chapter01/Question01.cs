@@ -24,21 +24,45 @@ namespace Netsoft.OpenDataStructures.Chapter01
         {
             while (!stdin.EndOfStream)
             {
-                foreach (string line in stdin.ReadLines(50).Reverse())
+                foreach (string line in stdin.ReadLines(50).ToArray().Reverse())
                 {
                     stdout.WriteLine(line);
                 }
             }
         }
 
-        private static string[] ReadLines(this StreamReader stdin, int by)
+        private static List<string> ReadLines(this StreamReader stdin, int by)
         {
             var lines = new List<string>();
-            while (lines.Count < by || !stdin.EndOfStream)
+            while (lines.Count < by && !stdin.EndOfStream)
             {
                 lines.Add(stdin.ReadLine());
             }
-            return lines.ToArray();
+            return lines;
+        }
+       
+        public static void Answer03(StreamReader stdin, StreamWriter stdout)
+        {
+            var lines = stdin.ReadLines(41);
+
+            if(stdin.EndOfStream)
+            {
+                return;
+            }
+
+            do
+            {
+                string line = stdin.ReadLine();
+                
+                if (string.IsNullOrEmpty(line))
+                {
+                    stdout.WriteLine(lines[0]);
+                }
+
+                lines.RemoveAt(0);
+                lines.Add(line);
+
+            } while (!stdin.EndOfStream);
         }
     }
 }
