@@ -103,5 +103,32 @@ fourth
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void TestAnswer07()
+        {
+            string input = @"1
+2
+3
+1
+33
+22
+";
+            string expected = "2\r\n2\r\n3\r\n22\r\n33\r\n";
+
+            using var min = new MemoryStream(Encoding.UTF8.GetBytes(input));
+            using var stdin = new StreamReader(min);
+            using var mout = new MemoryStream();
+
+            var stdout = new StreamWriter(mout);
+            Question01.Answer07(stdin, stdout);
+
+            stdout.Flush();
+            min.Flush();
+
+            string actual = Encoding.UTF8.GetString(mout.ToArray());
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

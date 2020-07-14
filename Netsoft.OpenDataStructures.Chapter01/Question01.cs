@@ -109,6 +109,34 @@ namespace Netsoft.OpenDataStructures.Chapter01
                 stdout.WriteLine(line);
             }
         }
+
+        public static void Answer07(StreamReader stdin, StreamWriter stdout)
+        {
+            var comparer = new CustomStringComparer(StringComparer.CurrentCulture);
+            var sortedLines = new SortedDictionary<string,int>(comparer);
+            while (!stdin.EndOfStream)
+            {
+                string line = stdin.ReadLine();
+                if (!sortedLines.ContainsKey(line))
+                {
+                    sortedLines.Add(line, 0);
+                }
+
+                sortedLines[line]++;
+            }
+
+            foreach (var line in sortedLines)
+            {
+                if (line.Value == 1)
+                {
+                    stdout.WriteLine(line.Key);
+                }
+                else
+                {
+                    stdout.WriteLine(line.Value);
+                }
+            }
+        }
     }
 
     class CustomStringComparer : IComparer<string>
