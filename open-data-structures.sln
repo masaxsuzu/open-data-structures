@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Netsoft.OpenDataStructures", "Tests.Netsoft.OpenDataStructures\Tests.Netsoft.OpenDataStructures.csproj", "{722DE895-890E-4008-BA95-38C072FF6D4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netsoft.OpenDataStructures.Interfaces", "Netsoft.OpenDataStructures.Interfaces\Netsoft.OpenDataStructures.Interfaces.csproj", "{9041C935-636A-43FF-8B9E-FA5F98AF7898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{722DE895-890E-4008-BA95-38C072FF6D4C}.Release|x64.Build.0 = Release|Any CPU
 		{722DE895-890E-4008-BA95-38C072FF6D4C}.Release|x86.ActiveCfg = Release|Any CPU
 		{722DE895-890E-4008-BA95-38C072FF6D4C}.Release|x86.Build.0 = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|x64.Build.0 = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Debug|x86.Build.0 = Debug|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|x64.ActiveCfg = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|x64.Build.0 = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|x86.ActiveCfg = Release|Any CPU
+		{9041C935-636A-43FF-8B9E-FA5F98AF7898}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

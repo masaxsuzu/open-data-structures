@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Netsoft.OpenDataStructures.Chapter01\Netsoft.OpenDataStructures.Chapter01.csproj" />
+    <ProjectReference Include="..\Netsoft.OpenDataStructures.Interfaces\Netsoft.OpenDataStructures.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
