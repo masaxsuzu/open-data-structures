@@ -95,5 +95,40 @@ namespace Netsoft.OpenDataStructures.Chapter01
                 }
             }
         }
+
+        public static void Answer06(StreamReader stdin, StreamWriter stdout)
+        {
+            var comparer = new CustomStringComparer(StringComparer.CurrentCulture);
+            var sortedLines = new SortedSet<string>(comparer);
+            while (!stdin.EndOfStream)
+            {
+                sortedLines.Add(stdin.ReadLine());
+            }
+            foreach (string line in sortedLines)
+            {
+                stdout.WriteLine(line);
+            }
+        }
+    }
+
+    class CustomStringComparer : IComparer<string>
+    {
+        private readonly IComparer<string> _baseComparer;
+        public CustomStringComparer(IComparer<string> baseComparer)
+        {
+            _baseComparer = baseComparer;
+        }
+
+        public int Compare(string x, string y)
+        {
+            int lenX = x.Length;
+            int lenY= y.Length;
+
+            if(lenX != lenY)
+            {
+                return lenX < lenY ? -1 : 1;
+            }
+            return _baseComparer.Compare(x, y);
+        }
     }
 }
