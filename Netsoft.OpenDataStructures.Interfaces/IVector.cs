@@ -2,11 +2,11 @@ using System;
 
 namespace Netsoft.OpenDataStructures.Interfaces
 {
-    public interface IMyList<T> where T : IEquatable<T>
+    public interface IVector<T> 
     {
         int Size();
 
-        int Get(T i);
+        T Get(int i);
 
         void Set(int i, T v);
 

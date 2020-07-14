@@ -2,7 +2,7 @@ using System;
 
 namespace Netsoft.OpenDataStructures.Interfaces
 {
-    public interface IMySSet<T> where T : IEquatable<T>
+    public interface ISSet<T> where T : IEquatable<T>, IComparable<T>
     {
         int Size();
 

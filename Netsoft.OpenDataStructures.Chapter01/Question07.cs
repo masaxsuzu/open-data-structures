@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Netsoft.OpenDataStructures.Chapter01
 {
-    public class CheatList : Interfaces.IMyList<int>
+    public class CheatList : Interfaces.IVector<int>
     {
         private readonly List<int> _list;
         public CheatList()

@@ -9,12 +9,12 @@ using System.Threading;
 
 namespace Netsoft.OpenDataStructures.Chapter01
 {
-    public class MyList : Interfaces.IMyList<int>
+    public class MyList<T> : Interfaces.IVector<T>
     {
-        private int[] _collection;
+        private T[] _collection;
         public MyList()
         {
-            _collection = new int[0] { };
+            _collection = new T[0] { };
         }
 
         public int Size()
@@ -22,17 +22,17 @@ namespace Netsoft.OpenDataStructures.Chapter01
             return _collection.Length;
         }
 
-        public int Get(int i)
+        public T Get(int i)
         {
             return _collection[i];
         }
 
-        public void Set(int i, int v)
+        public void Set(int i, T v)
         {
             _collection[i] = v;
         }
 
-        public void Add(int i, int v)
+        public void Add(int i, T v)
         {
             int n = Size() + 1;
             Array.Resize(ref _collection, n);
@@ -56,12 +56,12 @@ namespace Netsoft.OpenDataStructures.Chapter01
             Array.Resize(ref _collection, Size() - 1);
         }
     }
-    public class MySSet : Interfaces.IMySSet<int>
+    public class MySSet<T> : Interfaces.IUSet<T> where T : IEquatable<T>
     {
-        private int[] _collection;
+        private T[] _collection;
         public MySSet()
         {
-            _collection = new int[0] { };
+            _collection = new T[0] { };
         }
 
         public int Size()
@@ -69,7 +69,7 @@ namespace Netsoft.OpenDataStructures.Chapter01
             return _collection.Length;
         }
 
-        public void Add(int v)
+        public void Add(T v)
         {
             if (_collection.Contains(v))
             {
@@ -80,12 +80,12 @@ namespace Netsoft.OpenDataStructures.Chapter01
             _collection[n - 1] = v;
         }
 
-        public void Remove(int v)
+        public void Remove(T v)
         {
             int i = -1;
             for (int index = 0; index < Size(); index++)
             {
-                if (_collection[index] == v)
+                if (_collection[index].Equals(v))
                 {
                     i = index;
                     break;
@@ -106,18 +106,18 @@ namespace Netsoft.OpenDataStructures.Chapter01
         }
 
 
-        public bool Find(int x)
+        public bool Find(T x)
         {
             return _collection.Contains(x);
         }
     }
 
-    public class MyUSet : Interfaces.IMyUSet<int>
+    public class MyUSet<T> : Interfaces.ISSet<T> where T : IEquatable<T>, IComparable<T>
     {
-        private int[] _collection;
+        private T[] _collection;
         public MyUSet()
         {
-            _collection = new int[0] { };
+            _collection = new T[0] { };
         }
 
         public int Size()
@@ -125,7 +125,7 @@ namespace Netsoft.OpenDataStructures.Chapter01
             return _collection.Length;
         }
 
-        public void Add(int v)
+        public void Add(T v)
         {
             if (_collection.Contains(v))
             {
@@ -137,12 +137,12 @@ namespace Netsoft.OpenDataStructures.Chapter01
             Array.Sort(_collection);
         }
 
-        public void Remove(int v)
+        public void Remove(T v)
         {
             int i = -1;
             for (int index = 0; index < Size(); index++)
             {
-                if (_collection[index] == v)
+                if (_collection[index].Equals(v))
                 {
                     i = index;
                     break;
@@ -164,11 +164,11 @@ namespace Netsoft.OpenDataStructures.Chapter01
         }
 
 
-        public bool Find(int x)
+        public bool Find(T x)
         {
             for (int i = 0; i < Size(); i++)
             {
-                if(_collection[i] >= x)
+                if (_collection[i].CompareTo(x) >= 0)
                 {
                     return true;
                 }
