@@ -78,5 +78,22 @@ namespace Netsoft.OpenDataStructures.Chapter01
                 }
             }
         }
+
+        public static void Answer05(StreamReader stdin, StreamWriter stdout)
+        {
+            var uniqueLines = new HashSet<string>();
+            while (!stdin.EndOfStream)
+            {
+                string line = stdin.ReadLine();
+                if (uniqueLines.Contains(line))
+                {
+                    stdout.WriteLine(line);
+                }
+                else
+                {
+                    uniqueLines.Add(line);
+                }
+            }
+        }
     }
 }
