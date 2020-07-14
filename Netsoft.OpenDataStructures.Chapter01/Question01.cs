@@ -137,6 +137,35 @@ namespace Netsoft.OpenDataStructures.Chapter01
                 }
             }
         }
+
+        public static void Answer08(StreamReader stdin, StreamWriter stdout)
+        {
+            bool isEven = true;
+            var evenLines = new Queue<string>();
+            var oddLines = new Queue<string>();
+            while (!stdin.EndOfStream)
+            {
+                string line = stdin.ReadLine();
+                if (isEven)
+                {
+                    evenLines.Enqueue(line);
+                }
+                else
+                {
+                    oddLines.Enqueue(line);
+                }
+                isEven = !isEven;
+            }
+
+            foreach (string even in evenLines)
+            {
+                stdout.WriteLine(even);
+            }
+            foreach (string odd in oddLines)
+            {
+                stdout.WriteLine(odd);
+            }
+        }
     }
 
     class CustomStringComparer : IComparer<string>
