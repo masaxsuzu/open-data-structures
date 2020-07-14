@@ -166,6 +166,20 @@ namespace Netsoft.OpenDataStructures.Chapter01
                 stdout.WriteLine(odd);
             }
         }
+        public static void Answer09(StreamReader stdin, StreamWriter stdout)
+        {
+            var lines = new SortedDictionary<Guid, string>();
+            while (!stdin.EndOfStream)
+            {
+                string line = stdin.ReadLine();
+                lines.Add(Guid.NewGuid(), line);
+            }
+
+            foreach (var line in lines)
+            {
+                stdout.WriteLine(line.Key);
+            }
+        }
     }
 
     class CustomStringComparer : IComparer<string>
