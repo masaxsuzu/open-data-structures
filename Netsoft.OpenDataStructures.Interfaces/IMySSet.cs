@@ -2,7 +2,7 @@
 
 namespace Netsoft.OpenDataStructures.Interfaces
 {
-    public interface IMySet<T> where T : IEquatable<T>
+    public interface IMySSet<T> where T : IEquatable<T>
     {
         int Size();
 

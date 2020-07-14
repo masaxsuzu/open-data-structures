@@ -56,10 +56,10 @@ namespace Netsoft.OpenDataStructures.Chapter01
             Array.Resize(ref _collection, Size() - 1);
         }
     }
-    public class MySet : Interfaces.IMySet<int>
+    public class MySSet : Interfaces.IMySSet<int>
     {
         private int[] _collection;
-        public MySet()
+        public MySSet()
         {
             _collection = new int[0] { };
         }
@@ -109,6 +109,71 @@ namespace Netsoft.OpenDataStructures.Chapter01
         public bool Find(int x)
         {
             return _collection.Contains(x);
+        }
+    }
+
+    public class MyUSet : Interfaces.IMyUSet<int>
+    {
+        private int[] _collection;
+        public MyUSet()
+        {
+            _collection = new int[0] { };
+        }
+
+        public int Size()
+        {
+            return _collection.Length;
+        }
+
+        public void Add(int v)
+        {
+            if (_collection.Contains(v))
+            {
+                return;
+            }
+            int n = Size() + 1;
+            Array.Resize(ref _collection, n);
+            _collection[n - 1] = v;
+            Array.Sort(_collection);
+        }
+
+        public void Remove(int v)
+        {
+            int i = -1;
+            for (int index = 0; index < Size(); index++)
+            {
+                if (_collection[index] == v)
+                {
+                    i = index;
+                    break;
+                }
+            }
+
+            if (i == -1)
+            {
+                return;
+            }
+
+            for (int index = i; index < Size() - 1; index++)
+            {
+                _collection[index] = _collection[index + 1];
+            }
+
+            Array.Resize(ref _collection, Size() - 1);
+            Array.Sort(_collection);
+        }
+
+
+        public bool Find(int x)
+        {
+            for (int i = 0; i < Size(); i++)
+            {
+                if(_collection[i] >= x)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

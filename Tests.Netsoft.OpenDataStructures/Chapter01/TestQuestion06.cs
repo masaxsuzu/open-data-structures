@@ -57,9 +57,9 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         [Fact]
         public void TestAnswer02()
         {
-            _TestAnswer02(new MySet());
+            _TestAnswer02(new MySSet());
         }
-        private void _TestAnswer02(IMySet<int> list)
+        private void _TestAnswer02(IMySSet<int> list)
         {
             Assert.Equal(0, list.Size());
 
@@ -83,6 +83,41 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
             Assert.False(list.Find(1));
             Assert.True(list.Find(2));
             Assert.True(list.Find(3));
+            Assert.Equal(2, list.Size());
+        }
+
+        [Fact]
+        public void TestAnswer03()
+        {
+            _TestAnswer03(new MyUSet());
+        }
+        private void _TestAnswer03(IMyUSet<int> list)
+        {
+            Assert.Equal(0, list.Size());
+
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            Assert.True(list.Find(1));
+            Assert.True(list.Find(2));
+            Assert.True(list.Find(3));
+            Assert.False(list.Find(4));
+            Assert.Equal(3, list.Size());
+
+            list.Remove(1);
+
+            Assert.True(list.Find(1));
+            Assert.True(list.Find(2));
+            Assert.True(list.Find(3));
+            Assert.False(list.Find(4));
+            Assert.Equal(2, list.Size());
+
+            list.Add(3);
+
+            Assert.True(list.Find(1));
+            Assert.True(list.Find(2));
+            Assert.True(list.Find(3));
+            Assert.False(list.Find(4));
             Assert.Equal(2, list.Size());
         }
     }
