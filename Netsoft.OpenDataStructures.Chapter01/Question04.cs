@@ -11,17 +11,20 @@ namespace Netsoft.OpenDataStructures.Chapter01
     {
         public static IEnumerable<T> Answer<T>(Stack<T> @input)
         {
-            var stack = new MyStack<T>();
-
-            foreach (var item in input)
+            var queue = new Queue<T>();
+            while (input.Count > 0)
             {
-                stack.Push(item);
+                queue.Enqueue(input.Pop());
+            }
+            foreach (var item in queue)
+            {
+                input.Push(item);
             }
 
-            return stack;
+            return input;
         }
     }
-    public class MyStack<T> : IEnumerable<T>
+    class MyStack<T> : IEnumerable<T>
     {
         private Queue<T> _q1;
         private Queue<T> _q2;
