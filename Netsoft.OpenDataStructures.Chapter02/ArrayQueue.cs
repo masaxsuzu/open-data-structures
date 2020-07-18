@@ -2,7 +2,7 @@
 
 namespace Netsoft.OpenDataStructures.Chapter02
 {
-    public class ArrayQueue<T> : Interfaces.IVector<T>, Interfaces.IQueue<T>
+    public class ArrayQueue<T> : Interfaces.IQueue<T>
     {
         private int _size;
         private int _current;
