@@ -25,7 +25,7 @@ namespace Netsoft.OpenDataStructures.Chapter02
                 throw new IndexOutOfRangeException();
             }
 
-            return _a[(_j + i) % _a.Length];
+            return _a[Mod(_j + i)];
         }
 
         public T Set(int i, T v)
@@ -35,8 +35,8 @@ namespace Netsoft.OpenDataStructures.Chapter02
                 throw new IndexOutOfRangeException();
             }
 
-            var t = _a[(_j + i) % _a.Length];
-            _a[(_j + i) % _a.Length] = v;
+            var t = _a[Mod(_j + i)];
+            _a[Mod(_j + i)] = v;
             return t;
         }
 
@@ -52,20 +52,23 @@ namespace Netsoft.OpenDataStructures.Chapter02
                 Resize();
             }
 
-            if (i < _n / 2) {
+            if (i < _n / 2) 
+            {
                 _j = _j == 0 ? _a.Length - 1 : _j - 1;
                 for (int k = 0; k < i - 1; k++)
                 {
-                    _a[(_j + k) % _a.Length] = _a[(_j + k + 1) % _a.Length]; 
+                    _a[Mod(_j + k)] = _a[Mod(_j + k + 1)];
                 }
-            } else {
+            } 
+            else 
+            {
                 for (int k = _n; k > i; k--)
                 {
-                    _a[(_j + k) % _a.Length] = _a[(_j + k - 1) % _a.Length];
+                    _a[Mod(_j + k)] = _a[Mod(_j + k - 1)];
                 }
             }
 
-            _a[(_j + i) % _a.Length ] = v;
+            _a[Mod(_j + i)] = v;
             _n++;
         }
 
@@ -76,18 +79,23 @@ namespace Netsoft.OpenDataStructures.Chapter02
                 throw new IndexOutOfRangeException();
             }
 
-            var t = _a[(_j + i) % _a.Length];
+            var t = _a[Mod(_j + i)];
 
-            if (i < _n / 2) {
+            if (i < _n / 2) 
+            {
                 for (int k = i; k > 0; k--)
                 {
-                    _a[(_j + k) % _a.Length] = _a[(_j + k - 1) % _a.Length];
+                    _a[Mod(_j + k)] = _a[Mod(_j + k - 1)];
                 }
-                _j = (_j + 1) % _a.Length;
-            } else {
+                _j = Mod(_j + 1);
+            } 
+            else
+            {
                 for (int k = i; k < _n - 1; k++)
                 {
-                    _a[(_j + k) % _a.Length] = _a[(_j + k + 1) % _a.Length]; 
+                    int dest = Mod(_j + k);
+                    int src = Mod(_j + k + 1);
+                    _a[dest] = _a[src];
                 }
             }
             
@@ -129,14 +137,37 @@ namespace Netsoft.OpenDataStructures.Chapter02
         private void Resize()
         {
             var collection = new T[0] { };
-            Array.Resize(ref collection, Math.Max(2 * _n, 1));
+            int x = NextPow2(_n);
+            Array.Resize(ref collection, Math.Max(x, 1));
             for (int i = 0; i < _n; i++)
             {
-                collection[i] = _a[(_j + i) % _a.Length];
+                int src = Mod(_j + i);
+                collection[i] = _a[Mod(_j + i)];
             }
 
             _a = collection;
             _j = 0;
+        }
+
+        private int Mod(int r)
+        {
+            return r & (_a.Length - 1);
+        }
+        static int NextPow2(int n)
+        {
+            if (n <= 0)
+            {
+                return 0;
+            }
+
+            if ((n & (n - 1)) == 0)
+            {
+                return n * 2;
+            }
+
+            int ret = 1;
+            while (n > 0) { ret <<= 1; n >>= 1; }
+            return ret;
         }
     }
 }
