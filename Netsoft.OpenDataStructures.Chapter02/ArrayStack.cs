@@ -12,6 +12,12 @@ namespace Netsoft.OpenDataStructures.Chapter02
             _collection = new T[0] { };
         }
 
+        public ArrayStack(int size, T[] collection)
+        {
+            _size = size;
+            _collection = collection;
+        }
+
         public int Size()
         {
             return _size;

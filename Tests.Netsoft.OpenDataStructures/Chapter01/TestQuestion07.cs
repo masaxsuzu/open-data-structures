@@ -25,7 +25,6 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter01
         [InlineData(100)]
         [InlineData(1000)]
         [InlineData(10000)]
-        [InlineData(100000)]
         public void Benchmark_Answer02_Add_MyList(int n)
         {
             Benchmark_Answer02(new MyList<int>(), n);
