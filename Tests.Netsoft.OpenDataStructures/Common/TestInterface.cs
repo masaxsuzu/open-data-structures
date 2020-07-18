@@ -43,6 +43,12 @@ namespace Tests.Netsoft.OpenDataStructures.Common
             Assert.Equal(12, list.Get(2));
             Assert.Equal(11, list.Get(1));
             Assert.Equal(10, list.Get(0));
+
+            list.Remove(2);
+            list.Remove(1);
+
+            Assert.Equal(13, list.Get(1));
+            Assert.Equal(10, list.Get(0));
         }
 
         internal static void TestStack(IStack<int> stack)
