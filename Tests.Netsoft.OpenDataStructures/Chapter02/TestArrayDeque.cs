@@ -22,18 +22,13 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter02
         [Fact]
         public void Test02()
         {
-            var got = new List<int>();
-            var stack = new ArrayDeque<int>();
+            Common.TestInterface.TestStack(new ArrayDeque<int>());
+        }
 
-            stack.Enqueue(1);
-            stack.Enqueue(2);
-            stack.Enqueue(3);
-
-            got.Add(stack.Dequeue());
-            got.Add(stack.Dequeue());
-            got.Add(stack.Dequeue());
-
-            Assert.Equal(new int[] { 1, 2, 3 }, got);
+        [Fact]
+        public void Test03()
+        {
+            Common.TestInterface.TestQueue(new ArrayDeque<int>());
         }
     }
 }

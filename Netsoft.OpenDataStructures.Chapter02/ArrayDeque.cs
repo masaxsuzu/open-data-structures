@@ -2,7 +2,7 @@
 
 namespace Netsoft.OpenDataStructures.Chapter02
 {
-    public class ArrayDeque<T> : Interfaces.IVector<T>, Interfaces.IQueue<T>
+    public class ArrayDeque<T> : Interfaces.IVector<T>, Interfaces.IStack<T>, Interfaces.IQueue<T>
     {
         private int _n;
         private int _j;
@@ -99,6 +99,16 @@ namespace Netsoft.OpenDataStructures.Chapter02
             }
 
             return t;
+        }
+
+        public void Push(T v)
+        {
+            Add(0, v);
+        }
+
+        public T Pop()
+        {
+            return Remove(0);
         }
 
         public void Enqueue(T v)

@@ -22,18 +22,7 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter02
         [Fact]
         public void Test02()
         {
-            var got = new List<int>();
-            var stack = new ArrayStack<int>();
-
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-
-            got.Add(stack.Pop());
-            got.Add(stack.Pop());
-            got.Add(stack.Pop());
-
-            Assert.Equal(new int[] { 3, 2, 1 }, got);
+            Common.TestInterface.TestStack(new ArrayStack<int>());
         }
     }
 }
