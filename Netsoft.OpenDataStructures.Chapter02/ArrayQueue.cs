@@ -58,11 +58,6 @@ namespace Netsoft.OpenDataStructures.Chapter02
 
         public T Remove(int i)
         {
-            if (OutOfBounds(i))
-            {
-                throw new IndexOutOfRangeException();
-            }
-
             var t = _collection[i];
 
             _current = (_current + 1) % _collection.Length;

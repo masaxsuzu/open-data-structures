@@ -52,12 +52,18 @@ namespace Tests.Netsoft.OpenDataStructures.Common
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Push(6);
 
             got.Add(stack.Pop());
             got.Add(stack.Pop());
             got.Add(stack.Pop());
+            got.Add(stack.Pop());
+            got.Add(stack.Pop());
+            got.Add(stack.Pop());
 
-            Assert.Equal(new int[] { 3, 2, 1 }, got);
+            Assert.Equal(new int[] { 6, 5, 4, 3, 2, 1 }, got);
         }
 
         internal static void TestQueue(IQueue<int> queue)
@@ -67,12 +73,18 @@ namespace Tests.Netsoft.OpenDataStructures.Common
             queue.Enqueue(1);
             queue.Enqueue(2);
             queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+            queue.Enqueue(6);
 
             got.Add(queue.Dequeue());
             got.Add(queue.Dequeue());
             got.Add(queue.Dequeue());
+            got.Add(queue.Dequeue());
+            got.Add(queue.Dequeue());
+            got.Add(queue.Dequeue());
 
-            Assert.Equal(new int[] { 1, 2, 3 }, got);
+            Assert.Equal(new int[] { 1, 2, 3, 4, 5, 6 }, got);
         }
     }
 }
