@@ -8,7 +8,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Netsoft.OpenDataStruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.Interfaces", "Netsoft.OpenDataStructures.Interfaces\Netsoft.OpenDataStructures.Interfaces.csproj", "{9041C935-636A-43FF-8B9E-FA5F98AF7898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netsoft.OpenDataStructures.Chapter02", "Netsoft.OpenDataStructures.Chapter02\Netsoft.OpenDataStructures.Chapter02.csproj", "{35285767-CDC4-455D-A1E4-5B21B8E8EE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.Chapter02", "Netsoft.OpenDataStructures.Chapter02\Netsoft.OpenDataStructures.Chapter02.csproj", "{35285767-CDC4-455D-A1E4-5B21B8E8EE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.Netsoft.OpenDataStructures", "Benchmarks.Netsoft.OpenDataStructures\Benchmarks.Netsoft.OpenDataStructures.csproj", "{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FE4CA12-7FB4-40FB-966E-859D8D62AA67}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +75,18 @@ Global
 		{35285767-CDC4-455D-A1E4-5B21B8E8EE87}.Release|x64.Build.0 = Release|Any CPU
 		{35285767-CDC4-455D-A1E4-5B21B8E8EE87}.Release|x86.ActiveCfg = Release|Any CPU
 		{35285767-CDC4-455D-A1E4-5B21B8E8EE87}.Release|x86.Build.0 = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|x64.Build.0 = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|x64.ActiveCfg = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|x64.Build.0 = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

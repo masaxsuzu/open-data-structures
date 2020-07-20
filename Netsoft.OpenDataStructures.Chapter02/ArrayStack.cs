@@ -52,7 +52,7 @@ namespace Netsoft.OpenDataStructures.Chapter02
                 throw new IndexOutOfRangeException();
             }
 
-            if(_size + i >= _collection.Length)
+            if(_size + 1 >= _collection.Length)
             {
                 Resize();
             }
