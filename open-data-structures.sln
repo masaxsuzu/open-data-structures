@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.Chapter02", "Netsoft.OpenDataStructures.Chapter02\Netsoft.OpenDataStructures.Chapter02.csproj", "{35285767-CDC4-455D-A1E4-5B21B8E8EE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.Netsoft.OpenDataStructures", "Benchmarks.Netsoft.OpenDataStructures\Benchmarks.Netsoft.OpenDataStructures.csproj", "{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks.Netsoft.OpenDataStructures", "benchmarks\Benchmarks.Netsoft.OpenDataStructures.csproj", "{EA3C6028-4E5D-4584-9E6A-AF7FB3D9AC52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FE4CA12-7FB4-40FB-966E-859D8D62AA67}"
 	ProjectSection(SolutionItems) = preProject
