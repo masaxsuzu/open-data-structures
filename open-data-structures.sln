@@ -4,7 +4,7 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.Chapter01", "Netsoft.OpenDataStructures.Chapter01\Netsoft.OpenDataStructures.Chapter01.csproj", "{174C8A29-692E-4FA9-9F00-50297B5962E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Netsoft.OpenDataStructures", "Tests.Netsoft.OpenDataStructures\Tests.Netsoft.OpenDataStructures.csproj", "{722DE895-890E-4008-BA95-38C072FF6D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Netsoft.OpenDataStructures", "tests\Tests.Netsoft.OpenDataStructures.csproj", "{722DE895-890E-4008-BA95-38C072FF6D4C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.OpenDataStructures.Interfaces", "Netsoft.OpenDataStructures.Interfaces\Netsoft.OpenDataStructures.Interfaces.csproj", "{9041C935-636A-43FF-8B9E-FA5F98AF7898}"
 EndProject
