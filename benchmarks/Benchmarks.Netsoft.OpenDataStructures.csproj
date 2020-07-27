@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Netsoft.OpenDataStructures.Chapter02\Netsoft.OpenDataStructures.Chapter02.csproj" />
-    <ProjectReference Include="..\Netsoft.OpenDataStructures.Interfaces\Netsoft.OpenDataStructures.Interfaces.csproj" />
+    <ProjectReference Include="..\src\Netsoft.OpenDataStructures.csproj" />
   </ItemGroup>
 
 </Project>
