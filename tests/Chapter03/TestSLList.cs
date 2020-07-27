@@ -14,13 +14,13 @@ namespace Tests.Netsoft.OpenDataStructures.Chapter03
         [Fact]
         public void Test01()
         {
-            Common.TestInterface.TestStack(new SLList<int>());
+            Common.TestInterface.TestStack(new SingleLinkedList<int>());
         }
 
         [Fact]
         public void Test02()
         {
-            Common.TestInterface.TestStack(new SLList<int>());
+            Common.TestInterface.TestStack(new SingleLinkedList<int>());
         }
     }
 }

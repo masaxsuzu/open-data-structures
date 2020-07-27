@@ -3,12 +3,21 @@ using Netsoft.OpenDataStructures;
 
 namespace Netsoft.OpenDataStructures.Chapter03
 {
-    public class SLList<T> : Interfaces.IStack<T>, Interfaces.IQueue<T>
+    public class SingleLinkedList<T> : Interfaces.IStack<T>, Interfaces.IQueue<T>
     {
-        private Node<T> _head;
-        private Node<T> _tail;
+        private class Node
+        {
+            public Node()
+            {
+            }
+            public T Value { get; set; }
+            public Node Next { get; set; }
+        }
+
+        private Node _head;
+        private Node _tail;
         private int _size;
-        public SLList()
+        public SingleLinkedList()
         {
             _size = 0;
         }
@@ -20,7 +29,7 @@ namespace Netsoft.OpenDataStructures.Chapter03
 
         public void Enqueue(T v)
         {
-            var u = new Node<T>() {
+            var u = new Node() {
                 Value = v,
             };
             if(_size == 0) {
@@ -39,7 +48,7 @@ namespace Netsoft.OpenDataStructures.Chapter03
                 throw new InvalidOperationException();
             }
 
-            T x = _head.Value;
+            var x = _head.Value;
             _head = _head.Next;
 
             _size--;
@@ -52,7 +61,7 @@ namespace Netsoft.OpenDataStructures.Chapter03
 
         public void Push(T v)
         {
-            var u = new Node<T>() {
+            var u = new Node() {
                 Value = v,
                 Next = _head,
             };
