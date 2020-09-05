@@ -92,5 +92,35 @@ namespace Tests.Netsoft.OpenDataStructures.Common
 
             Assert.Equal(new int[] { 1, 2, 3, 4, 5, 6 }, got);
         }
+
+        internal static void TestSSet(ISSet<int> set)
+        {
+            Assert.Equal(0, set.Size());
+
+            set.Add(1);
+            set.Add(2);
+            set.Add(3);
+            Assert.True(set.Find(1));
+            Assert.True(set.Find(2));
+            Assert.True(set.Find(3));
+            Assert.False(set.Find(4));
+            Assert.Equal(3, set.Size());
+
+            set.Remove(1);
+
+            Assert.False(set.Find(1));
+            Assert.True(set.Find(2));
+            Assert.True(set.Find(3));
+            Assert.False(set.Find(4));
+            Assert.Equal(2, set.Size());
+
+            set.Add(3);
+
+            Assert.False(set.Find(1));
+            Assert.True(set.Find(2));
+            Assert.True(set.Find(3));
+            Assert.False(set.Find(4));
+            Assert.Equal(2, set.Size());
+        }
     }
 }
