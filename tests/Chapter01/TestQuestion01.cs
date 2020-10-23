@@ -60,7 +60,7 @@ fourth
 4
 
 ";
-            string expected = "first\r\nfourth\r\n";
+            string expected = "first\nfourth\n";
 
             using var min = new MemoryStream(Encoding.UTF8.GetBytes(input));
             using var stdin = new StreamReader(min);
@@ -74,7 +74,7 @@ fourth
 
             string actual = Encoding.UTF8.GetString(mout.ToArray());
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual.Replace("\r\n","\n"));
         }
 
         [Fact]
@@ -87,7 +87,7 @@ fourth
 33
 22
 ";
-            string expected = "1\r\n2\r\n3\r\n22\r\n33\r\n";
+            string expected = "1\n2\n3\n22\n33\n";
 
             using var min = new MemoryStream(Encoding.UTF8.GetBytes(input));
             using var stdin = new StreamReader(min);
@@ -101,7 +101,7 @@ fourth
 
             string actual = Encoding.UTF8.GetString(mout.ToArray());
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual.Replace("\r\n","\n"));
         }
 
         [Fact]
@@ -114,7 +114,7 @@ fourth
 33
 22
 ";
-            string expected = "2\r\n2\r\n3\r\n22\r\n33\r\n";
+            string expected = "2\n2\n3\n22\n33\n";
 
             using var min = new MemoryStream(Encoding.UTF8.GetBytes(input));
             using var stdin = new StreamReader(min);
@@ -128,7 +128,7 @@ fourth
 
             string actual = Encoding.UTF8.GetString(mout.ToArray());
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual.Replace("\r\n","\n"));
         }
 
         [Fact]
@@ -141,7 +141,7 @@ fourth
 33
 22
 ";
-            string expected = "1\r\n3\r\n33\r\n2\r\n1\r\n22\r\n";
+            string expected = "1\n3\n33\n2\n1\n22\n";
 
             using var min = new MemoryStream(Encoding.UTF8.GetBytes(input));
             using var stdin = new StreamReader(min);
@@ -155,7 +155,7 @@ fourth
 
             string actual = Encoding.UTF8.GetString(mout.ToArray());
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual.Replace("\r\n","\n"));
         }
     }
 }
