@@ -122,5 +122,36 @@ namespace Tests.Netsoft.OpenDataStructures.Common
             Assert.False(set.Find(4));
             Assert.Equal(2, set.Size());
         }
+
+        internal static void TestKVSet(IKVSet<int> set)
+        {
+            Assert.Equal(0, set.Size());
+
+            for (int i = 0; i < 5000; i++)
+                set.Add($"{i}", i);
+            for (int i = 1000; i < 2000; i++)
+                set.Remove($"{i}");
+            for (int i = 1500; i < 1600; i++)
+                set.Add($"{i}", i);
+            for (int i = 6000; i < 7000; i++)
+                set.Add($"{i}", i);
+
+            for (int i = 0; i < 1000; i++)
+                Assert.Equal(i, set.Find($"{i}"));
+            for (int i = 1000; i < 1500; i++)
+                Assert.False(set.Has($"{i}"));
+            for (int i = 1500; i < 1600; i++)
+                Assert.Equal(i, set.Find($"{i}"));
+            for (int i = 1600; i < 2000; i++)
+                Assert.False(set.Has($"{i}"));
+            for (int i = 2000; i < 5000; i++)
+                Assert.Equal(i, set.Find($"{i}"));
+            for (int i = 5000; i < 6000; i++)
+                Assert.False(set.Has($"{i}"));
+            for (int i = 6000; i < 7000; i++)
+                Assert.Equal(i, set.Find($"{i}"));
+
+            Assert.Equal(5100, set.Size());
+        }
     }
 }
